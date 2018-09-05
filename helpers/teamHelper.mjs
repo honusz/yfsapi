@@ -21,6 +21,10 @@ export function mapRoster(r) {
 
   for (let i = 0; i < count; i++) {
     let player = players[i].player[0];
+    
+    if (!!players[i].player[1].selected_position) {
+      player.push(players[i].player[1]);
+    }
     player = mapPlayer(player);
 
     roster.push(player);
